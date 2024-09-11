@@ -19,16 +19,17 @@ have installed the `nlp` environment by following the instructions in
 
 ## Structure
 
-This lab has three parts: 
+This lab has four parts: 
 
-1. Go from linguistic phenomenon to model evaluation 
-2. Systematize your evaluation 
-3. Analyze results and compile your findings
+1. Understand the linguistic phenomenon and research question
+2. Describe how you will use the `NLPScholar` toolkit to answer the research question
+3. Use the `NLPScholar` toolkit to generate results 
+4. Interpret the results 
 
 ## Provided files
 
 -  Lab2.py
-- `sample_results.tsv`
+- `sample_data.tsv`
 - [A google doc
   template](https://docs.google.com/document/d/1kBff1UjvVXto0X-gH4Icb3MbB9zhND0PRCj-c1nz6m4/edit?usp=sharing)
     to write responses
@@ -37,8 +38,10 @@ This lab has three parts:
 
 ## What to submit
 - Lab2.py
-- A **tsv** of your data and results from Part 1
-- A **pdf** of the google doc template with your answers
+- A **tsv** of your condition data from Part 2.
+- (Optional) The modified **Lab2.py** file with the function(s) you used to create your input data (if you modified the file)
+- A **tsv** file of your results from Part 3. 
+- A **pdf** of the google doc template with your answers.
 
 ## Part 0
 
@@ -52,7 +55,7 @@ environment activated run:
 
         pip install seaborn
 
-## Part 1: Ideation (60 minutes)
+## Part 1: Understanding the research question and linguistic phenomenon (40 minutes)
 
 Consider the following motivating examples: 
 
@@ -73,25 +76,23 @@ In fact, many (possibly all) languages have verbs like this ([Harshorne et al.,
 2013](https://doi.org/10.1027/1618-3169/a000187)). These verbs are called
 `implicit causality` verbs. There are two types: `subject implicit causality`
 verbs like `frightened` and `object implicit causality` verbs like `feared`.
-Our research question today is **Do transformer-based language models learn
+
+#### Research question: 
+**Do transformer-based language models learn
 implicit causality?** We will narrow this to a sub-question: **Does distilgpt2
 learn the implicit causality bias of verbs?** Your tasks in this lab is to
 answer this question. 
 
-In this first part, think through with your group how can answer this question
-using the toolkit. Here's some things to keep in mind to help get you started: 
+#### Questions to answer: 
 
-- We can't ask what distilgpt2 thinks a pronoun refers to. We need some
-  dependent measure. 
-- Can we make examples 1 and 2 into templates? Consider what else we could vary
-  to help us see whether the model prefers subject or object referring pronouns.  
-- What if we varied the stereotypical gender of the subject and object in a
-    sentence? Could we construct meaningful minimal pairs with a pronoun
-    uniquely referring to either the subject or the object?  
-- distilgpt2 is a causal language model with the name `distilbert/distilgpt2` on
-    HuggingFace. Try out some sentences using `interact` to see if you can use
-    probability as a depedent measure. 
-- Examples of each type of verb are included below. 
+1. How could you measure if the model learned implicit causality in the specific example pair above? (i.e., what would be your **dependent measure**)
+
+2. Say you are given a list of verbs (e.g. see table below) which have either a Subject IC bias (like frightened) or an Object IC bias (like feared). How could you measure if the model learned implicit causality for all of the verbs? 
+
+3. The example above has a specific format (or "template"). Can you come up with at least one other template in which you think the model's IC bias might be different (either in direction, or the magnitude of bias)? It might be helpful to think here about what are all the parts of the template you can systematically vary, and why these parts might influence IC bias. 
+
+4. Use the `interact` mode to see if your intuitions about the IC bias for `distilgpt2` in the different templates were correct. Note: distilgpt2 is a causal language model with the name `distilbert/distilgpt2` on HuggingFace. For this part, your exploration does not have to be expansive (e.g., try only a few sentences and verbs, not everything). In your answer, include screenshots of the things you tried, and highlight which specific outputs of the interact were your answers based on. 
+
 
 | Subject IC | Object IC | 
 | ---------  | --------  | 
@@ -107,41 +108,34 @@ using the toolkit. Here's some things to keep in mind to help get you started:
 | upset      | valued | 
 
 
-In this part, you should use the `interact` mode to test some initial ideas for
-how to evaluate the model's knowledge. To help scaffold you here, consider this
-google
-[sheet](https://docs.google.com/spreadsheets/d/1s_1Fr44kCERzN-c5hK0KnaD8wkTWdPn7Bm0HF03LDuA/edit?usp=sharing).
-It includes the format you should use to organize your experiment on the sheet
-labeled data. There are columns included to help you think through what
-information you should included. See the
-[MinimalPairAnalysis](https://github.com/forrestdavis/NLPScholar/blob/main/src/analysis/MinimalPairAnalysis.md)
-document for more details on these column names. 
+## Part 2: Describing how to use the toolkit to explore the reasearch question more robustly (40 minutes)
 
- Using `interact` mode you should fill in the results table with your initial
-explorations. You should develop around 8 sentences by the end of this part and
-an initial result by aggregating over your results table (in the results sheet)
+As you might have discovered, while the `interact` mode is helpful to get quick intuitions, it can be tedious if you want to run more robust experiments. In this part, you will work through how you will use the `evaluate` and `analyze` modes to answer the questions. 
 
-## Part 2: Scaling up (40 minutes)
+The documentation for [the `analyze` mode of the MinimalPairAnalysis experiment](https://github.com/forrestdavis/NLPScholar/blob/main/src/analysis/MinimalPairAnalysis.md) outlines what the format of the data needs to be like. 
 
-By the end of Part 1, you should have developed a sense for a **template** you
-could use to test a model's knowledge of implicit causality and some initial
-results. In this part, you will scale up your experiments and draw on the
-`evaluate` mode. You should add to `Lab2.py` code to generate more data for your
-experiment. Sample code is provided showing how to do this for subject-verb
-agreement
-[here](https://github.com/forrestdavis/NLPScholar/blob/main/src/analysis/analysis_util/create_mp_stims.py).
-Build on this existing code. 
+Do the following: 
 
-Detail your considerations and process as you go in your google doc
-(which you'll submit later as a pdf). 
+1. Read this documentation and then manually create a table with the columns for TSV file with conditions. For now, just include a couple of minimal pairs. The goal here is for you to understand what each of the columns mean. You can use existing spreadsheet software (e.g., excel, google sheets) for this. 
 
-## Part 3: Analysis and Findings (20 minutes)
+2. Scale up and create a larger TSV file with at least 3 verbs each in the Subject and Object IC bins, and two templates. It is probably easiest to write a python function that will generate this TSV file (see sample code [here](https://github.com/forrestdavis/NLPScholar/blob/main/results/minimal_pairs.tsv) for a different experimental setup). However, you are also welcome to do this part manually. If you write a function, please add that to your `Lab2.py` file. 
 
-Conduct your experiment using `NLPScholar`. Use the data you made in Part 2 and
-the `analysis` mode.  Collect your results and make sense of them. See the
+3. Describe how you would use this file to get the final results from the analyze mode. For an example of what the results might look like for a different experimental setup (not with IC verbs) look at this [tsv file](https://github.com/forrestdavis/NLPScholar/blob/main/results/minimal_pairs.tsv).
+
+Note: If you are finding that writing the python file for part 2 is taking you a long time, it can be helpful for you to start by testing to make sure you can work through Part 3 with a small (if imperfect) manually generated file, before trying to perfect your templates. 
+
+## Part 3: Using the toolkit (10 minutes)
+
+Use the toolkit to run the experiment you described in the previous part. You wil submit the file that is outputted by the `analyze` mode. 
+
+
+## Part 4: Analysis and Findings (20 minutes)
+
+Look at the results file generated by the `analyze` mode and make sense of them. See the
 provided code (which use `sample_results.tsv`) for some examples of plotting
 results. Plots can help you make sense of your findings! Include your plots in
 your google doc. You should answer the question at the start of this lab.
 **Justify your answer based on your results.** Finally, consider any limitations
 in your experimental design or approach more generally. 
+
 
