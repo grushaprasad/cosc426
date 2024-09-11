@@ -31,10 +31,8 @@ This lab has four parts:
 -  Lab2.py
 - `sample_data.tsv`
 - [A google doc
-  template](https://docs.google.com/document/d/1kBff1UjvVXto0X-gH4Icb3MbB9zhND0PRCj-c1nz6m4/edit?usp=sharing)
+  template](https://docs.google.com/document/d/1bFvUQha8hpSYZeKPBZmteAiRXcw2TZwVj6ctI8vER60/edit?usp=sharing)
     to write responses
-- [A google sheet template](https://docs.google.com/spreadsheets/d/1s_1Fr44kCERzN-c5hK0KnaD8wkTWdPn7Bm0HF03LDuA/edit?usp=sharing)
-    to structure Part 1
 
 ## What to submit
 - Lab2.py
