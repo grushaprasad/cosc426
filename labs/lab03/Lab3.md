@@ -106,7 +106,7 @@ Next, create a new file called `grammar3.txt` where you add the adjective and ad
 Write test cases for your new grammar in the `test_grammar3` function in `Lab3.py`. 
 
 
-## Part 4
+## Part 4 (Optional)
 
 Now improve the grammar from the previous step by adding in relative clauses that modify the subject of the clause. Here are some examples of sentences that this grammar should be able to generate (these are also grammatical in SAE): 
 
