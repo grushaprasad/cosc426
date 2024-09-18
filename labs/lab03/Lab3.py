@@ -18,7 +18,7 @@ def parse_sentence(sentence:str, grammar:grammar.CFG):
     chart_parser = ChartParser(grammar)
     tokens = word_tokenize(sentence)
     parses = chart_parser.parse(tokens)
-    return parses 
+    return list(parses) 
 
 def generate_sentences(grammar: grammar.CFG, num_sents: int, max_depth=13) -> list:
     """
