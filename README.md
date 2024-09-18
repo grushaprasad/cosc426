@@ -1,4 +1,4 @@
-# cosc426-assignments
+# COSC426: Natural Language Processing
 
-Assignments and labs for most recent version of NLP course being taught by Grusha Prasad at Colgate University. 
+This repository has assignments, labs, and project information for most recent version of NLP course being taught by Grusha Prasad at Colgate University. 
 
