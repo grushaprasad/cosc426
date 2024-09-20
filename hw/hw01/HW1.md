@@ -1,4 +1,5 @@
 # COSC 426 F24 HW 1
+### The HW is due on September 30 2024. You should work on your own for this HW
 
 In the Lab 3 we worked with the Standard American English dialect. Some of the sentences that were ungrammatical in this dialect can be grammatical in other dialects. For example, the following sentences considered grammatical by (at least some) speakers of Indian English in specific situations.
 
@@ -22,7 +23,7 @@ Your goal in this homework is to evaluate if the pretrained LM `distilgpt` treat
 
 ## Provided files
 
-- `HW1.py`
+- [`HW1.py`](HW1.py)
 - [Google doc template](https://docs.google.com/document/d/1vQolsfncqGbVwt4DWeV2HZhZDCbYm9N6x0M3-Dz1ZYA/edit?usp=sharing) to write your answers
 
 ## To submit
