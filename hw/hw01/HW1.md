@@ -23,7 +23,7 @@ Your goal in this homework is to evaluate if the pretrained LM `distilgpt` treat
 ## Provided files
 
 - `HW1.py`
-- Google doc template
+- [Google doc template](https://docs.google.com/document/d/1vQolsfncqGbVwt4DWeV2HZhZDCbYm9N6x0M3-Dz1ZYA/edit?usp=sharing) to write your answers
 
 ## To submit
 
