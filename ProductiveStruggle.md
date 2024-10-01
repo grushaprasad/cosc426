@@ -8,7 +8,7 @@ All 400-level CS classes at Colgate University are intended to provide students 
 
 2. I will not help debug any issues with installing environments, running files, etc after the first three weeks of the semester. By this point you should have run some version of what you need to do in a lab or HW. So talk to your peers, post your question on discord or go to TA open lab hours to debug this issue. 
 
-3. If you send me an email (or Discord message) about other types of errors, you should make sure to include a [Minimum Reproducible Example](https://en.wikipedia.org/wiki/Minimal_reproducible_example), along with a description of the different ways in which you tried to fix the error. If there is too little or too much detail, I will not follow up with you through a sequence of emails trying to get the necessary/appropriate information; I will instead ask you to stop by office hours with an MRE.  
+3. If you send me an email (or Discord message) about other types of errors, you should make sure to include a [Minimum Reproducible Example](https://en.wikipedia.org/wiki/Minimal_reproducible_example), along with a description of the different ways in which you tried to fix the error. If there is too little or too much detail, I will not follow up with you through a sequence of emails trying to get the necessary/appropriate information; I will instead ask you to stop by office hours with an MRE. 
 
 4. If you ask me a question about some concept you find challenging, more often than not I will ask you another question that is intended to help you figure out the answer, instead of directly giving the answer. This means that you should leave yourself enough time to find answers to questions, and not come to me a few hours (or even just one day) before an assignment is due.  
 
@@ -22,4 +22,5 @@ All 400-level CS classes at Colgate University are intended to provide students 
 
 - In general it is always good practice to write or test code incrementally: start with a small set of examples and/or try running a few lines of code at a time before scaling up. Similarly, if you are modifying some existing code, change one thing at at time instead of changing everything at once. 
 
+- When you run into an error using [NLPScholar](https://github.com/forrestdavis/NLPScholar), first make sure to ensure that the error is not because you are incorrectly using the toolkit. Once you've done this, please submit an [issue](https://github.com/forrestdavis/NLPScholar/issues) using the provided template. If you have feedback on how to improve the documentation to make the toolkit easier to use, you can also submit an issue!  
 
