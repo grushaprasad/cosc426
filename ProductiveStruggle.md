@@ -6,7 +6,7 @@ All 400-level CS classes at Colgate University are intended to provide students 
 
 1. I will not answer questions about provided code for the HW or lab, or help you debug errors from trying to run this code, less than 72 hours before the HW or lab is due. This means that you should make sure to understand all of the provided code, and how it interacts with the tasks for the HW or lab before you try to fully tackle any specific part. 
 
-2. I will not help debug any issues with installing environments, running files, etc after the first three weeks of the semester over email. By this point you should have run some version of what you need to do kn a lab or HW. So talk to your peers, post your question on discord or go to TA open lab hours to debug this issue. 
+2. I will not help debug any issues with installing environments, running files, etc after the first three weeks of the semester. By this point you should have run some version of what you need to do in a lab or HW. So talk to your peers, post your question on discord or go to TA open lab hours to debug this issue. 
 
 3. If you send me an email (or Discord message) about other types of errors, you should make sure to include a [Minimum Reproducible Example](https://en.wikipedia.org/wiki/Minimal_reproducible_example). If there is too little or too much detail, I will not follow up with you through a sequence of emails trying to get the necessary/appropriate information; I will instead ask you to stop by office hours with an MRE.  
 
