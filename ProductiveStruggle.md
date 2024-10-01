@@ -14,7 +14,7 @@ All 400-level CS classes at Colgate University are intended to provide students 
 
 
 
-## Things to do when you run into errors or challenges
+## (Non comprehensive list of) Things to do when you run into errors or challenges
 
 - If you are having issues with installing environments, running files, etc before you reach out to me, pause and ask yourself these questions: Have you had to do something similar in a previous lab or homework? How is what you are doing different from what you've done before? Which of these changes are causing the error? 
 
