@@ -1,4 +1,4 @@
-## Struggling productively in this class
+# Struggling productively in this class
 
 All 400-level CS classes at Colgate University are intended to provide students with a capstone like experience. This means that by the end of this class you are expected to demonstrate the ability to work independently to solve problems and answer questions. This involves finding the balance between struggling productively and asking for help. The following policies are intended to help cultivate this balance. 
 
