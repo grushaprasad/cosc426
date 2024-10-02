@@ -13,7 +13,7 @@ In this lab you will build and evaluate bigram language models. By completing th
 - [A google doc template](https://docs.google.com/document/d/1IetrmwxL7V-hvNDvCWtE2_hzL06Lp2pCDqJGviwER2s/edit?usp=sharing)
 
 ## What to submit
-- `Lab5.py` with the added functions and tests for each grammar. 
+- `Lab5.py` with the added functions. 
 - A pdf of your google doc
 
 
