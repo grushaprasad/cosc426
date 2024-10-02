@@ -49,7 +49,7 @@ def getBigramFreqs(preprocessed_text:list, vocab:set) -> dict:
 
         If you run this function on the text from above with mark_ends as True, it should return: 
             73 bigrams
-            The following 3 bigrams should have count 2: ([BOS], UNK), (kitten, had) and (. , [EOS])
+            The following 3 bigrams should have count 2: ('for', 'the'), (kitten, had) and (. , [EOS])
             All other bigrams should have count of 1. 
     """
     pass
