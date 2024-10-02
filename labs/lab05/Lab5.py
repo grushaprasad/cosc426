@@ -11,7 +11,7 @@ def getVocab(vocab_fname: str) -> set:
             - [UNK] : to represent words in the text not in the vocab
             - [BOS] : to represent the beginning of sentences. 
             - [EOS] : to represent the end of sentences. 
-        If you run this function on the glove vocab, it should return set with 400001 items.
+        If you run this function on the glove vocab, it should return set with 400003 items.
     """
 
     with open(vocab_fname, 'r') as f:
