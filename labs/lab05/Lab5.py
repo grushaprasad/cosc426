@@ -11,7 +11,7 @@ def getVocab(vocab_fname: str) -> set:
             - [UNK] : to represent words in the text not in the vocab
             - [BOS] : to represent the beginning of sentences. 
             - [EOS] : to represent the end of sentences. 
-        If you run this function on the glove vocab, it should return set with 400001 items.
+        If you run this function on the glove vocab, it should return set with 400003 items.
     """
 
     with open(vocab_fname, 'r') as f:
@@ -49,7 +49,7 @@ def getBigramFreqs(preprocessed_text:list, vocab:set) -> dict:
 
         If you run this function on the text from above with mark_ends as True, it should return: 
             73 bigrams
-            The following 3 bigrams should have count 2: ([BOS], UNK), (kitten, had) and (. , [EOS])
+            The following 3 bigrams should have count 2: ('for', 'the'), (kitten, had) and (. , [EOS])
             All other bigrams should have count of 1. 
     """
     pass
