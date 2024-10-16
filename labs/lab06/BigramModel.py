@@ -80,7 +80,7 @@ class BigramModel:
         """
         pass
 
-    def getBigramProb(self, bigram, smooth):
+    def getBigramProb(self, bigram):
         """
         Args:
             bigram: the tuple of the bigram you want the prob of
@@ -117,7 +117,7 @@ class BigramModel:
         pass
 
 
-    def evaluate(self, eval_fpath, result_fpath, smooth):
+    def evaluate(self, eval_fpath, result_fpath):
         """
         Args: 
             eval_fpath: the path to the evaluation data
