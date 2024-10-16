@@ -2,9 +2,11 @@ import math
 import csv
 
 class BigramModel:
-    def __init__(self, tokenizer, vocab_fname: str, train_fpath: dict, mark_ends: bool):
+    def __init__(self, tokenizer, vocab_fname: str, train_fpath: dict, mark_ends: bool, smooth:str):
         self.tokenizer = tokenizer
         self.mark_ends = mark_ends
+        self.smooth = smooth
+
         self.vocab = self.getVocab(vocab_fname)
 
         self.train_dat= self.loadData(tokenizer, train_fpath, mark_ends)
