@@ -1,0 +1,5 @@
+"a review that says positive things about thing1, thing2, and thing 3", positive
+"another review that says a positive thing", positive
+"a scathingly bad review so sad", negative
+"this is good i guess", positive
+"this brings me no joy just pain", negative
