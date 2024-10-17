@@ -2,6 +2,8 @@
 
 For the final, you and a group of two to three people will work on a substantive independent NLP project. You will make both a final poster, to present your research to others in the class and the community during a showcase, and a final paper. More details on this to come later.
 
+You will work on the project in five phases. You can read about the pedagogical motivation for each of those phases in [our paper](https://aclanthology.org/2024.teachingnlp-1.16/). 
+
 ## Phase one: Thinking through an idea (on your own)
 
 First, you will work-through (at some level of detail) a project idea on your own. This should be something you are interested in, regardless of who you might work with in the end. You will submit an individual project idea building on a google doc template. Add a shortcut to your doc in the shared folder (you need to be logged in to your Colgate email) linked below. Additionally, post a pdf to Gradescope.
