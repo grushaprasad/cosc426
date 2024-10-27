@@ -13,6 +13,8 @@ First, you will work-through (at some level of detail) a project idea on your ow
 
 ## Phase two: Pilot proposal + feedback (in a group)
 
+* [Final project groups](https://docs.google.com/spreadsheets/d/1RGXBPNgqQVsYPk6myhhS4TK-eHgX8s2u5a6auBXQeeo/edit?usp=sharing) (Only for F24 COSC 426B; you need to be signed in with your Colgate email)
+
 ## Phase three: Results presentation (in a group)
 
 ## Phase four: Poster presentation (in a group)
