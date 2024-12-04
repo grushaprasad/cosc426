@@ -33,4 +33,6 @@ Add your slides to [this folder](https://drive.google.com/drive/folders/1AzeLpIM
 
 ## Phase four: Poster presentation (in a group)
 
+[Poster template](https://docs.google.com/presentation/d/1GGJMG_BTGtAOZLpRNaWq_JYd7sqgx72Vi5sCLR2ZhaA/edit?usp=sharing)
+
 ## Phase five: Writing the final paper (on your own)
