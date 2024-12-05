@@ -35,5 +35,6 @@ Add your slides to [this folder](https://drive.google.com/drive/folders/1AzeLpIM
 
 * [Poster template](https://docs.google.com/presentation/d/1GGJMG_BTGtAOZLpRNaWq_JYd7sqgx72Vi5sCLR2ZhaA/edit?usp=sharing)
 * [Poster presentation schedule](https://docs.google.com/spreadsheets/d/1S4PDAeQrDvTJs3lwh8T2F8QoMLIkUl2uWGLoexLiWIE/edit?usp=sharing) (Only for F24 COSC 426B; you need to be signed in with your Colgate email)
+* [Poster presentation rubric](https://docs.google.com/document/d/1FT_WVUHGX2FyaP49hB2R6xkZXdCiewCWWNjmjZRTvUE/edit?usp=sharing)
 
 ## Phase five: Writing the final paper (on your own)
