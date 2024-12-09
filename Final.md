@@ -38,3 +38,5 @@ Add your slides to [this folder](https://drive.google.com/drive/folders/1AzeLpIM
 * [Poster presentation rubric](https://docs.google.com/document/d/1FT_WVUHGX2FyaP49hB2R6xkZXdCiewCWWNjmjZRTvUE/edit?usp=sharing)
 
 ## Phase five: Writing the final paper (on your own)
+
+* [Paper template](https://www.overleaf.com/project/67571ccd9e602755afcb0d8d)
