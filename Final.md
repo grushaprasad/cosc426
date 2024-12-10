@@ -39,4 +39,4 @@ Add your slides to [this folder](https://drive.google.com/drive/folders/1AzeLpIM
 
 ## Phase five: Writing the final paper (on your own)
 
-* [Paper template](https://www.overleaf.com/project/67571ccd9e602755afcb0d8d)
+* [Paper template](https://www.overleaf.com/read/rwqybjvhypkf#d56386)
