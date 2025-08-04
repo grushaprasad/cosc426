@@ -1,4 +1,0 @@
-"one positive test review", positive
-"one negative test review", negative
-"second good test review", positive
-"second bad test review", negative

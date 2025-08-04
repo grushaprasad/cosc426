@@ -1,7 +1,0 @@
-textid	text	condition	target
-0	Source : Statistics New Zealand To contact the reporter on this story : Daniel Petrie in Sydney at dpetrie5@bloomberg.net To contact the editor responsible for this story : Marco Babic at mbabic@bloomberg.net	test	O O B-ORG I-ORG L-ORG O O O O O O O O B-PER L-PER O U-LOC O U-MISC O O O O O O O O O B-PER L-PER O U-MISC
-1	Abrams .	test	U-PER O
-2	"Governor Perng Fai - nan and his board increased the discount 
- rate on 10 - day loans to banks to 1.375 percent from a record - low 1.25 percent , confounding the forecasts of all 13 economists surveyed by Bloomberg News , who expected no change ."	test	U-PER B-PER I-PER I-PER L-PER O O O O O O O O O B-QTY I-QTY L-QTY O O O O B-QTY L-QTY O O O O O B-QTY L-QTY O O O O O B-QTY I-QTY L-QTY O O B-ORG L-ORG O O O O O O
-3	To contact the reporter on this story : David Marino in New York at dmarino4@bloomberg.net To contact the editor responsible for this story : David Marino at dmarino4@bloomberg.net	test	O O O O O O O O B-PER L-PER O B-LOC L-LOC O U-MISC O O O O O O O O O B-PER L-PER O U-MISC
-4	“ We need to invest more in the Americas , which we ’re doing .	test	O O O O O O O O U-LOC O O O O O O
