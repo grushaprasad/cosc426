@@ -8,7 +8,7 @@ This "lab" is intended to be completed before the first official lab on Septembe
 2. Installing required software on Turing, Colgate's HPC. 
 3. Python refresher
 
-ADD SOME NOTE HERE ABOUT GRADING AND HOW IT IS THEIR RESPONSIBILITY TO REACH OUT FOR HELP IF THEY FEEL STUCK. 
+**Please don't hesitate to reach out if you are stuck! It is very important that you finish this before the first lab**
 
 ## Part 1: Installation on your personal computer
 
