@@ -1,4 +1,4 @@
-# COSC 426 F24 Lab 0
+# COSC 426 F25 Lab 0
 
 ## Introduction
 
