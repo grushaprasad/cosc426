@@ -10,6 +10,16 @@ This "lab" is intended to be completed before the first official lab on Septembe
 
 **Please don't hesitate to reach out if you are stuck! It is very important that you finish this before the first lab**
 
+## Submission instructions
+
+Submit the following files to gradescope. 
+
+* Part 1: A screenshot of the output of running `python main.py sample_configs/interact.yaml` on your personal computer.
+
+* Part 2: A screenshot of the output of running `python main.py sample_configs/interact.yaml` on Turing.
+
+* Part 3: The completed `Lab0.py` and `Lab0.ipynb`. 
+
 ## Part 1: Installation on your personal computer
 
 In this class, you will be using the [NLPScholar toolkit](https://github.com/forrestdavis/NLPScholar/) that Prof. Forrest Davis and I co-developed. The goal of this part is to ensure that you are setup to use the toolkit before the first lab. 
