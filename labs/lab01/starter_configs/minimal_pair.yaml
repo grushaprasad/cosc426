@@ -13,9 +13,9 @@ models:
 
 predfpath: ../cosc426/labs/lab01/predictions/agreement.tsv
 
-datafpath: ../cosc426/labs/lab01/agreement.tsv
+datafpath: ../cosc426/labs/lab01/data/agreement.tsv
 
-resultsfpath: ../cosc426/labs/lab01/agreement.tsv
+resultsfpath: ../cosc426/labs/lab01/results/agreement.tsv
 
 save: by_word, by_pair, by_cond
 
