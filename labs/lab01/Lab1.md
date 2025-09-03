@@ -60,7 +60,7 @@ Answer the following questions for all the three models:
 
 3. Is the answer to question 2 different if you look at the surprisal of the entire sentence? 
 
-4. What is the mean probability of the expected (i.e., grammatical) sentences in `minimal_pairs.tsv` (over the entire sentence)?
+4. What is the mean probability of the expected (i.e., grammatical) sentences in `agreement.tsv` (over the entire sentence)?
 
 5. What is the mean probability of the word `chameleons` in the expected sentences when you consider the period vs. not (i.e., `chameleons` vs. `chameleons.`)
 
