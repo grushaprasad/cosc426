@@ -1,0 +1,21 @@
+exp: TextClassification
+
+mode: 
+    - evaluate
+
+models:
+    hf_text_classification_model:
+      - siebert/sentiment-roberta-large-english
+
+predfpath: ../cosc426/labs/lab01/predictions/sentiment.tsv
+
+datafpath: ../cosc426/labs/lab01/data/sentiment.tsv
+
+resultsfpath: ../cosc426/labs/lab01/results/sentiment.tsv
+
+id2label:
+    1: Positive
+    0: Negative
+
+save: by_cond, by_target
+

@@ -1,0 +1,7 @@
+textid	text	condition	target
+1	The Golden State Warrirors are an American professional basketball team based in San Francisco.	full	O B-location I-location B-group O O O O O O O O B-location B-location .
+2	Kleinfeltersville is a town in Pennsylvania.	full	B-location O O O O B-location .
+3	Noam Chomsky is a soft revolution.	full	B-person I-person O O O O .
+4	The Golden State Warrirors: American professional basketball team based in San Francisco.	short	O B-location I-location B-group : O O O O O O O O B-location B-location .
+5	Kleinfeltersville: town in Pennsylvania.	short	B-location : O O B-location .
+6	Noam Chomsky: soft revolution.	short	B-person I-person : O O .
