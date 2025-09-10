@@ -10,7 +10,9 @@ In this homework, you will continue to work on the implicit causality phenomenon
 
 * Move beyond toy data and run a moderate sized experiment using NLPScholar.
 
-Concretely, you will replicate at least one result from the following paper: [Implicit causality bias in English: a corpus of 300 verbs](https://link.springer.com/article/10.3758/s13428-010-0023-2)
+Concretely, you will replicate at least one result from the following paper: [Implicit causality bias in English: a corpus of 300 verbs](https://link.springer.com/article/10.3758/s13428-010-0023-2). 
+
+You can find the data for required for this lab in the electronic supplementary materials at the end of the paper, also linked [here](https://static-content.springer.com/esm/art%3A10.3758%2Fs13428-010-0023-2/MediaObjects/13428_2010_23_MOESM1_ESM.xlsx) for convenience. 
 
 ## Paper summary
 
