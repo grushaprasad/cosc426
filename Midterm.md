@@ -15,4 +15,5 @@
 
 ## Important links
 
+- [Preference form](https://docs.google.com/forms/d/e/1FAIpQLSc-3mriRGMPzjGYMfTBYafTo_1zyOShAmFdu4V9bGAq92Wcnw/viewform?usp=dialog)
 - [Overleaf paper template](https://www.overleaf.com/read/ywvnsjqxsjqh#f4d47b)
