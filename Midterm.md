@@ -15,5 +15,6 @@
 
 ## Important links
 
-- [Preference form](https://docs.google.com/forms/d/e/1FAIpQLSc-3mriRGMPzjGYMfTBYafTo_1zyOShAmFdu4V9bGAq92Wcnw/viewform?usp=dialog)
+- [Preference form](https://docs.google.com/forms/d/e/1FAIpQLSc-3mriRGMPzjGYMfTBYafTo_1zyOShAmFdu4V9bGAq92Wcnw/viewform?usp=dialog) (**Only for students; need to be signed into Colgate email**)
+- [Midterm groups](https://docs.google.com/spreadsheets/d/1doOiMv6qKcCuM_H4yqB2ObVTxMkUb8BCscOIxip6oGA/edit?usp=sharing) (**Only for students; need to be signed into Colgate email**)
 - [Overleaf paper template](https://www.overleaf.com/read/ywvnsjqxsjqh#f4d47b)
