@@ -75,6 +75,16 @@ def generate_sentences(grammar: dict, num_sents: int) -> list:
     # for tree in parser.parse(sentence.split()):
     #     tree.pretty_print()
 
+def parse_sentence(grammar_fname: str, sentence: str):
+    with open(grammar_fname, 'r') as f:
+        grammar = nltk.PCFG.fromstring(f.read())
+    try:
+        parser = nltk.parse.InsideChartParser(grammar)
+
+        return parser.parse(sentence.split())
+    except:
+        return []
+
 
 
 if __name__ == '__main__':
