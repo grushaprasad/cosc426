@@ -33,7 +33,7 @@ Your task in this homework is to compare `distilgpt`'s verb bias to human bias i
 
 1. How does the model's NP1 bias change with verb frequency? 
 
-2. Do activity verbs have a weaker bias than psychological verbs?
+2. Do activity verbs have a weaker NP1 bias than psychological verbs?
 
 3. Does model bias align more closely with female participants (i.e., always pick first NP) or with male participants (i.e., pick male NP)?
 
