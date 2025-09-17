@@ -102,6 +102,7 @@ Now improve the grammar from the previous step by adding in the following adject
 - the ponderous panda existed
 - the excited excited ponderous panda ate the sandwich
 - the panda saw my very delicious delicious sandwich in my very very ponderous pajamas
+- the panda saw my very very delicious very excited delicious sandwich in my ponderous pajamas 
 
 **Your grammar should treat these sentences as ungrammatical**
 - the panda ponderous existed
@@ -122,20 +123,22 @@ Now improve the grammar from the previous step by adding in the following adverb
 **Your grammar should treat these sentences as grammatical**
 - the panda vanished peacefully
 - the ponderous pajamas peacefully died
-- Peacefully the ponderous pajamas died
 - the ponderous pajamas existed peacefully in my pajamas
 - the panda peacefully saw the ponderous friend in my pajamas
 - the panda saw the ponderous friend peacefully in my pajamas
 - the panda saw the ponderous friend in my pajamas peacefully
-- my very very ponderous friend existed very very very peacefully. 
+- my very very ponderous friend existed very very very peacefully 
 - my friend ate the excited delicious sandwich peacefully joyfully in my pajamas
+- peacefully the ponderous pajamas died (OPTIONAL)
 
 **Your grammar should treat these sentences as ungrammatical**
-- the panda joyfully vanished peacefully
 - my ponderous friend existed peacefully very very
 - my friend very saw the sandwich in the pajamas
 - my friend very saw peacefully the sandwich in the pajamas
 - the joyfully pajamas saw the sandwich in the pajamas
+- the panda joyfully vanished peacefully (OPTIONAL)
+
+**Note: The last sentence in the grammatical and ungrammatical data are trickier. You can still get a Meets Expectation desgination even if you fail them.** 
 
 ### Your task
 
