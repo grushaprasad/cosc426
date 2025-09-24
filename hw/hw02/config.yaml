@@ -1,9 +1,0 @@
-trainfpath: imdb:train
-validfpath: imdb:test
-modelfpath: imdb_model
-
-trainfpath: nyu-mll/glue:mnli:train
-validfpath: nyu-mll/glue:mnli:validation_matched
-modelfpath: mnli_model
-
-loadPretrained: True
