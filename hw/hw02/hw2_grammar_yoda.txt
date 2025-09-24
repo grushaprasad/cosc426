@@ -1,10 +1,10 @@
 ## Non-terminals
 ROOT -> S [1.0]
-S -> SubjNP VP  [1.0]
+S -> ObjNP VP [0.9] | VP SubjNP [0.1]
 PP -> P NP  [1.0]
 NP -> Det N [0.7] | NP PP [0.1] | Pronoun [0.2]
-VP -> IV [0.4] | TV ObjNP  [0.4] | VP PP [0.2]
-SubjNP -> NP [1.0]
+VP -> IV [0.4] | SubjNP TV [0.4] | PP VP [0.2]
+SubjNP -> NP [0.9] | NP 'do' [0.1]
 ObjNP -> NP [1.0]
 
 ## Nouns
