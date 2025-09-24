@@ -4,6 +4,18 @@
 
 In this lab you will build and evaluate bigram language models. 
 
+### Grading
+In order to get the `Meets Expectation` designation for this lab, you should correctly complete the first three parts. To get the `Exceeded Expectation` designation you should also correctly complete part 4. 
+
+### Provided files
+- `Lab4.py`
+- `Lab4.ipynb`
+- `data` folder with different text files
+
+### What to submit
+- `Lab4.ipynb` with answers to all of the questions in all the parts
+
+- `Lab4.py` with the functions implemented. 
 
 ## Part 1: Practice computing bigram probabilities
 
