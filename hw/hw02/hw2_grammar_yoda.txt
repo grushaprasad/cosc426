@@ -1,0 +1,22 @@
+## Non-terminals
+ROOT -> S [1.0]
+S -> SubjNP VP  [1.0]
+PP -> P NP  [1.0]
+NP -> Det N [0.7] | NP PP [0.1] | Pronoun [0.2]
+VP -> IV [0.4] | TV ObjNP  [0.4] | VP PP [0.2]
+SubjNP -> NP [1.0]
+ObjNP -> NP [1.0]
+
+## Nouns
+N -> 'Force' [0.2] | 'Jedi' [0.2] | 'path' [0.1] | 'night' [0.1] | 'rain' [0.1] | 'darkness' [0.1] | 'light' [0.1] | 'forest' [0.1]
+
+## Verbs
+TV -> 'seek'  [0.4] | 'teach' [0.3] | 'follow' [0.3]
+IV -> 'fight' [0.5] | 'sleep' [0.5]
+
+## Other terminals
+Det ->  'the' [1] 
+
+Pronoun -> 'you' [0.25] | 'I' [0.25] | 'they' [0.25] | 'we' [0.25]
+
+P -> 'through' [0.25] | 'in' [0.75]
