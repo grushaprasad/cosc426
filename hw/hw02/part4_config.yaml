@@ -9,21 +9,21 @@ models:
   hf_causal_model:
     - distilbert/distilgpt2
 
-# Finetune
+# Train
 trainfpath: ../cosc426/hw/hw02/data/train.tsv
 
 validfpath: ../cosc426/hw/hw02/data/val.tsv
 
-modelfpath: ../cosc426/hw/hw02/models/finetuned
+modelfpath: ../cosc426/hw/hw02/models/trained
 
-loadPretrained: True
+loadPretrained: False
 
 # Evaluate & Analyze
-predfpath: ../cosc426/hw/hw02/predictions/pretrain_predictions.tsv
+predfpath: ../cosc426/hw/hw02/predictions/train_predictions.tsv
 
 datafpath: ../cosc426/hw/hw02/data/data.tsv
 
-resultsfpath: ../cosc426/hw/hw02/results/pretrain_results.tsv
+resultsfpath: ../cosc426/hw/hw02/results/train_results.tsv
 
 pred_measure: prob
 
