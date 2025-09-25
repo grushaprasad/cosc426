@@ -1,0 +1,30 @@
+exp: MinimalPair
+
+mode:
+  - train
+  - evaluate
+  - analyze
+
+models:
+  hf_causal_model:
+    - distilbert/distilgpt2
+
+# Finetune
+trainfpath: ../cosc426/hw/hw02/data/train.tsv
+
+validfpath: ../cosc426/hw/hw02/data/val.tsv
+
+modelfpath: ../cosc426/hw/hw02/models/model
+
+loadPretrained: True
+
+# Evaluate & Analyze
+predfpath: ../cosc426/hw/hw02/predictions/pretrain_predictions.tsv
+
+datafpath: ../cosc426/hw/hw02/data/data.tsv
+
+resultsfpath: ../cosc426/hw/hw02/results/pretrain_results.tsv
+
+pred_measure: prob
+
+save: by_pair, by_cond
