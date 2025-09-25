@@ -4,7 +4,7 @@ S -> ObjNP VP [0.9] | VP SubjNP [0.1]
 PP -> P NP  [1.0]
 NP -> Det N [0.7] | NP PP [0.1] | Pronoun [0.2]
 VP -> IV [0.4] | SubjNP TV [0.4] | PP VP [0.2]
-SubjNP -> NP [0.9] | NP 'do' [0.1]
+SubjNP -> NP [0.9] | NP AUX [0.1]
 ObjNP -> NP [1.0]
 
 ## Nouns
@@ -13,6 +13,7 @@ N -> 'Force' [0.2] | 'Jedi' [0.2] | 'path' [0.1] | 'night' [0.1] | 'rain' [0.1] 
 ## Verbs
 TV -> 'seek'  [0.4] | 'teach' [0.3] | 'follow' [0.3]
 IV -> 'fight' [0.5] | 'sleep' [0.5]
+AUX -> 'do' [1.0]
 
 ## Other terminals
 Det ->  'the' [1] 
