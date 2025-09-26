@@ -193,7 +193,6 @@ def getTrainVocab(fn:str):
     return a
 
 def evaluate(fn:str, smooth:str, bigramfrq: dict, unigramfrq:dict, vocab:list):
-    # smooth='add-1'
     text = preprocess(fn, True)
     total = 0
     count = 0
