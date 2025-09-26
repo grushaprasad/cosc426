@@ -21,7 +21,7 @@ def getVocab(vocab_fname: str) -> set:
     a = ['[UNK]','[BOS]','[EOS]']
     with open(vocab_fname) as f:
         for line in f:
-            a.append(line)
+            a.extend(line.lower().rstrip('\n').split())
     return a
 
 def preprocess(textfname:str, mark_ends: bool) -> list:
@@ -95,43 +95,112 @@ def getBigramFreqs(preprocessed_text:list, vocab:set) -> dict:
     {2: [('kitten', 'had'), ('.', '[EOS]'), ('for', 'the')]}
 
     """
-    
-    
-    # return wordcount 
+    frq = {}
+    for sent in preprocessed_text: 
+        words = [ word if word in vocab else '[UNK]' for word in sent ]
+        for i in range(len(words)-1):    
+            if ((words[i], words[i+1]) not in frq):
+                frq[(words[i], words[i+1])] = 1
+            else:
+                frq[(words[i], words[i+1])] += 1
+    return frq
 
-# def getBigramProb(bigram: tuple, smooth: str, **kwargs):
-#     """
-#     Args:
-#         bigram: the tuple of the bigram you want the prob of
-#         smooth: MLE (no smoothing), add-k where you add k to all bigram counts. Returns -1 if invalid smooth is entered. 
-#         **kwargs: other parameters you might want. 
+def getBigramProb(bigram: tuple, smooth: str, **kwargs):
+    """
+    Args:
+        bigram: the tuple of the bigram you want the prob of
+        smooth: MLE (no smoothing), add-k where you add k to all bigram counts. Returns -1 if invalid smooth is entered. 
+        **kwargs: other parameters you might want. 
 
-#         Hint: think about what parameters do you want to pass in so you minimize redundant computation. 
+        Hint: think about what parameters do you want to pass in so you minimize redundant computation. 
 
-#     Returns:
-#         float with prob. 
-#         Return -1.0 if invalid smoothing value is entered. 
+    Returns:
+        float with prob. 
+        Return -1.0 if invalid smoothing value is entered. 
 
-#         Here are the probabilities for some bigrams from data/test.txt
+        Here are the probabilities for some bigrams from data/test.txt
         
-#         MLE: 
-#             ('one', 'thing') 1.0
-#             ('kitten', 'had') 0.6666666666666666
-#             ('cat', 'had') 0.0
-#             ('had', 'had') 0.25
-#             ('on', 'the') 0.0
-#             ('held', 'a') 0.0
-#             ('zzzzzzz', 'the') 0.0
+        MLE: 
+            ('one', 'thing') 1.0
+            ('kitten', 'had') 0.6666666666666666
+            ('cat', 'had') 0.0
+            ('had', 'had') 0.25
+            ('on', 'the') 0.0
+            ('held', 'a') 0.0
+            ('zzzzzzz', 'the') 0.0
 
-#         add-1:
-#             ('one', 'thing') 4.999950000499995e-06
-#             ('kitten', 'had') 7.499887501687475e-06
-#             ('cat', 'had') 2.4999750002499977e-06
-#             ('had', 'had') 4.999912501531223e-06
-#             ('on', 'the') 2.499981250140624e-06
-#             ('held', 'a') 2.499981250140624e-06
-#             ('zzzzzzz', 'the') 2.4999562507656116e-06
+        add-1:
+            ('one', 'thing') 4.999950000499995e-06
+            ('kitten', 'had') 7.499887501687475e-06
+            ('cat', 'had') 2.4999750002499977e-06
+            ('had', 'had') 4.999912501531223e-06
+            ('on', 'the') 2.499981250140624e-06
+            ('held', 'a') 2.499981250140624e-06
+            ('zzzzzzz', 'the') 2.4999562507656116e-06
 
-#     """
-#     pass
+    """
+    k = 0 
+    b = [bigram[0], bigram[1]]
+    if smooth !='MLE' and not smooth.startswith('add-'):
+        print("You are in     if smooth is not 'MLE' or not smooth.startswith('add-'):")
+        return -1
+    if smooth.startswith('add-'):
+        try:
+            k = int(smooth.lstrip('add-'))
+        except:
+            return -1
 
+    # (frqbigram + k) / (w_1frq + VK)
+    unigramfrq = kwargs['unigramfrq']
+    bigramfrq = kwargs['bigramfrq']
+    vocab:dict = kwargs['vocab']
+    
+    if bigram[0] not in vocab:
+        b[0] = '[UNK]'
+    if bigram[1] not in vocab:
+        b[1] = '[UNK]'
+    
+    nu = k
+    if tuple(b) in bigramfrq:
+        nu = bigramfrq[tuple(b)] + k
+    
+    de = len(vocab)*k
+    if b[0] in unigramfrq:
+        de = unigramfrq[b[0]] + len(vocab)*k
+    
+    if not de:
+        return 0.0
+    return nu/de
+    
+def getUnigramFreqs(preprocessed_text:list, vocab:set) -> dict:
+    frq = {}
+    for sent in preprocessed_text: 
+        words = [ word if word in vocab else '[UNK]' for word in sent ]
+        for i in range(len(words)):    
+            if (words[i] not in frq):
+                frq[words[i]] = 1
+            else:
+                frq[words[i]] += 1
+    return frq
+
+def getTrainVocab(fn:str):
+    a = ['[UNK]','[BOS]','[EOS]']
+    with open(fn) as f:
+        for line in f:
+            a.extend(nltk.word_tokenize(line))
+    a = list(set(a))
+    a.sort()
+    return a
+
+def evaluate(fn:str, smooth:str, bigramfrq: dict, unigramfrq:dict, vocab:list):
+    # smooth='add-1'
+    text = preprocess(fn, True)
+    total = 0
+    count = 0
+    for sent in text: 
+        for i in range(len(sent)-1):
+            total += getBigramProb((sent[i],sent[i+1]), smooth, bigramfrq=bigramfrq, unigramfrq=unigramfrq, vocab=vocab)
+            count += 1
+    
+    return total/count 
+            
