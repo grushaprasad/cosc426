@@ -146,7 +146,7 @@ def getBigramProb(bigram: tuple, smooth: str, **kwargs):
         return -1
     if smooth.startswith('add-'):
         try:
-            k = int(smooth.lstrip('add-'))
+            k = float(smooth.lstrip('add-'))
         except:
             return -1
 
@@ -203,4 +203,34 @@ def evaluate(fn:str, smooth:str, bigramfrq: dict, unigramfrq:dict, vocab:list):
             count += 1
     
     return total/count 
-            
+
+def run_all_tests(target_file):
+    smoothing_params = [2, 1, 0.1, 0.01, 0.001, 0.0001, 0.00001]
+    mark_ends_options = [True, False]
+
+    print("="*70)
+    print(f"Starting Evaluation on: {target_file}")
+    print("="*70)
+
+    vocab = getTrainVocab(target_file)
+
+    for k in smoothing_params:
+        smoothing_str = f'add-{k}'
+        
+        for mark_ends in mark_ends_options:
+            text = preprocess(target_file, mark_ends)
+
+            bigram_freqs = getBigramFreqs(text, vocab)
+            unigram_freqs = getUnigramFreqs(text, vocab)
+
+            score = evaluate(target_file, smoothing_str, bigram_freqs, unigram_freqs, vocab)
+
+            mark_ends_label = str(mark_ends).lower()
+            print(f'[{smoothing_str:>11}][mark the ends:{mark_ends_label:>5}] -> Score: {score:.4f}')
+        
+        if k != smoothing_params[-1]:
+            print("-" * 70)
+
+    print("="*70)
+    print("Evaluation Complete.")
+    print("="*70)
