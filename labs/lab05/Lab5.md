@@ -39,7 +39,7 @@ In this part you should:
 1.  In `Lab5.ipynb` answer the following question: what are the parameters required to initialize a `UnigramModel` object and how are these parameters used in the `UnigramModel` class. 
 
 
-2. In `UnigramModel.py` implement the incomplete functions: `get_prob` and `evaluate`. You can verify that 
+2. In `UnigramModel.py` implement the incomplete functions: `get_prob` and `evaluate`. You can verify that your functions work with the provided tests. 
 
 
 ## Part 2: Implementing the building blocks of a Bayesian Classifier
