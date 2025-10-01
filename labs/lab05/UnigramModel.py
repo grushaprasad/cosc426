@@ -1,6 +1,7 @@
 import math
 import csv
 import nltk
+import pandas as pd
 
 
 class UnigramModel:
@@ -67,16 +68,32 @@ class UnigramModel:
 
         return freq_dict
 
-    def get_prob(self, unigram):
+    def get_prob(self, unigram: str):
         """
         Params:
             unigram. Assumes unigram is preprocessed (e.g., words not in vocab are already replaced with UNK)
         Returns:
             Smoothed probability of unigram given the trained model. -1.0 if invalid smooth. (Valid smooth:  MLE (no smoothing), add-k where you add k to all bigram counts)
-
         """
+        k = 0
+        v = len(self.vocab)
+        w = 0
+        if self.smooth != "MLE" and not self.smooth.startswith("add-"):
+            print(
+                "You are in     if smooth is not 'MLE' or not smooth.startswith('add-'):"
+            )
+            return -1
+        if self.smooth.startswith("add-"):
+            try:
+                k = float(self.smooth.lstrip("add-"))
+            except:
+                return -1
+        if unigram in self.unigram_freqs:
+            w = self.unigram_freqs[unigram]
+        else:
+            w = self.unigram_freqs[self.unk_token]
 
-        pass
+        return (w + k) / (v * k)
 
     def evaluate(self, datafpath, predfpath):
         """
@@ -92,4 +109,17 @@ class UnigramModel:
                 prob: P(word | context)
                 surp: -log_2(word | context)
         """
-        pass
+
+        text = self.preprocess([datafpath])
+        rows = []
+
+        for sentid in range(len(text)):
+            sent = text[sentid]
+            for wordpos in range(len(sent)):
+                word = sent[wordpos]
+                prob = self.get_prob(word)
+                surp = -math.log2(prob)
+                rows.append([sentid, word, wordpos, prob, surp])
+
+        df = pd.DataFrame(rows, columns=["sentid", "word", "wordpos", "prob", "surp"])
+        df.to_csv(predfpath, sep="\t", index=0)

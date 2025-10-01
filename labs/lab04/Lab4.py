@@ -59,7 +59,7 @@ def preprocess(textfname:str, mark_ends: bool) -> list:
 
         result.append(a)
     return result
-    
+
 
 def TestBigramFreqs(freq_dict, print_non1 = False):
     """
@@ -171,7 +171,7 @@ def getBigramProb(bigram: tuple, smooth: str, **kwargs):
     if not de:
         return 0.0
     return nu/de
-    
+
 def getUnigramFreqs(preprocessed_text:list, vocab:set) -> dict:
     frq = {}
     for sent in preprocessed_text: 
@@ -215,7 +215,7 @@ def run_all_tests(target_file):
 
     for k in smoothing_params:
         smoothing_str = f'add-{k}'
-        
+
         for mark_ends in mark_ends_options:
             text = preprocess(target_file, mark_ends)
 
@@ -226,7 +226,7 @@ def run_all_tests(target_file):
 
             mark_ends_label = str(mark_ends).lower()
             print(f'[{smoothing_str:>11}][mark the ends:{mark_ends_label:>5}] -> Score: {score:.4f}')
-        
+
         if k != smoothing_params[-1]:
             print("-" * 70)
 
