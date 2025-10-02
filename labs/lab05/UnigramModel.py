@@ -75,9 +75,10 @@ class UnigramModel:
         Returns:
             Smoothed probability of unigram given the trained model. -1.0 if invalid smooth. (Valid smooth:  MLE (no smoothing), add-k where you add k to all bigram counts)
         """
-        k = 0
-        v = len(self.vocab)
-        w = 0
+        k = 0  # k in add K
+        v = len(self.vocab)  # num words
+        w = 0  # num unigram
+        n = sum(len(row) for row in self.traindat)
         if self.smooth != "MLE" and not self.smooth.startswith("add-"):
             print(
                 "You are in     if smooth is not 'MLE' or not smooth.startswith('add-'):"
@@ -93,7 +94,7 @@ class UnigramModel:
         else:
             w = self.unigram_freqs[self.unk_token]
 
-        return (w + k) / (v * k)
+        return (w + k) / (n + (v * k))
 
     def evaluate(self, datafpath, predfpath):
         """
