@@ -38,13 +38,19 @@ def preprocess(textfname: list, lower, tokenizer, **kwargs):
         List of tokens in the text
 
     """
-
+    tokens = []
+    print(f'Reading {textfname}')
     with open(textfname, 'r') as f:
-        text = f.read()
-    if lower:
-        text = text.lower()
+        text = f.readlines()
 
-    return tokenizer(text, kwargs)
+    for i,line in enumerate(text):
+        if lower:
+            line = line.lower()
+        tokens.extend(tokenizer(line, kwargs))
+        if i%100 == 0:
+            print(f'Tokenized {i+1} lines')
+
+    return tokens
 
 def hf_tokenize(text:str, kwargs):
     """
