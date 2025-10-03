@@ -3,6 +3,7 @@ from transformers import AutoTokenizer
 import os
 import pickle
 
+# 1. get_ngramFreqs doesn't accept vocab, so there is no UNK.
 
 def get_ngrams(text: list, n):
     """
@@ -108,13 +109,14 @@ def train_ngram(text: list, n: int, vocab: set, smooth: str = "MLE"):
     """
     k = 0.0
     v = len(vocab)
+    text.append("[UNK]")
     total_words = len(text)  # for unigram
     freqs = {}
     target_freqs = {}
     probs = {}
 
     if smooth.startswith("add-"):
-        k = float(smooth.split("-")[1])
+        k = float(smooth[4:])
         if k < 0:
             raise ValueError("k must be non-negative")
 
@@ -151,7 +153,7 @@ def evaluate(model: dict, eval_text: list, n: int):
     total = 0
     count = 0
     for i in range(len(eval_text) - n + 1):
-        total += model[eval_text[i : i + n]]
+        total += model[tuple(eval_text[i : i + n])]
         count += 1
 
     return total / count
