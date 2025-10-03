@@ -1,0 +1,17 @@
+exp: TextClassification
+
+mode:
+  - train
+
+models:
+  hf_causal_model:
+    - distilbert/distilgpt2
+
+# Train
+trainfpath: ../cosc426/hw/hw03/data/train.tsv
+
+validfpath: ../cosc426/hw/hw03/data/val.tsv
+
+modelfpath: ../cosc426/hw/hw03/models/trained
+
+loadPretrained: False
