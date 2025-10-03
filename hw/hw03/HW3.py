@@ -2,8 +2,8 @@ import nltk
 from transformers import AutoTokenizer
 import os
 import pickle
+import csv
 
-# 1. get_ngramFreqs doesn't accept vocab, so there is no UNK.
 
 def get_ngrams(text: list, n):
     """
@@ -120,8 +120,6 @@ def train_ngram(text: list, n: int, vocab: set, smooth: str = "MLE"):
         if k < 0:
             raise ValueError("k must be non-negative")
 
-    print(f"Using smoothing with k={k}")
-
     for i in range(1, n + 1):  # get all ngram freqs up to n
         ngram_freqs = get_ngramFreqs(text, i)
         freqs = freqs | ngram_freqs
@@ -142,21 +140,21 @@ def train_ngram(text: list, n: int, vocab: set, smooth: str = "MLE"):
 def evaluate(model: dict, eval_text: list, n: int):
     """Evaluate the n-gram model on a given text file.
 
-    Args:
-        model (dict): The n-gram model to evaluate.
-        eval_text (list): The tokenized evaluation text.
-        n (int): The n in n-gram.
-
     Returns:
         float: the average probability of the n-grams in the evaluation text.
     """
-    total = 0
+    total_prob = 0.0
     count = 0
+
     for i in range(len(eval_text) - n + 1):
-        total += model[tuple(eval_text[i : i + n])]
+        ngram = tuple(eval_text[i : i + n])
+        total_prob += model.get(ngram, 0)
         count += 1
 
-    return total / count
+    if count == 0:
+        return 0.0
+
+    return total_prob / count
 
 
 def preprocess_and_cache(
@@ -190,6 +188,17 @@ def preprocess_and_cache(
 
     print(f"Successfully processed {textfname}. Token count: {len(tokens)}\n")
     return tokens
+
+
+def write_to_tsv(filepath, columns, rows):
+    with open(filepath, "w") as f:
+        writer = csv.writer(f, delimiter="\t")
+        writer.writerow(columns)
+        for row in rows:
+            if isinstance(row, str):
+                writer.writerow([row])
+            elif isinstance(row, list):
+                writer.writerow(row)
 
 
 if __name__ == "__main__":

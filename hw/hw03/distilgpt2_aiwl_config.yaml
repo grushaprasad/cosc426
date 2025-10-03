@@ -1,4 +1,4 @@
-exp: TextClassification
+exp: MinimalPair
 
 mode:
   - train
@@ -12,6 +12,6 @@ trainfpath: ../cosc426/hw/hw03/data/train.tsv
 
 validfpath: ../cosc426/hw/hw03/data/val.tsv
 
-modelfpath: ../cosc426/hw/hw03/models/trained
+modelfpath: ../cosc426/hw/hw03/models/distilgpt2
 
 loadPretrained: False

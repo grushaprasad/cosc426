@@ -1,0 +1,19 @@
+exp: MinimalPair
+
+mode:
+  - evaluate
+
+models:
+  hf_causal_model:
+    - /Users/jeong/Projects/cosc426-projects/cosc426/hw/hw03/models/distilgpt2
+
+# Evaluate
+predfpath: ../cosc426/hw/hw03/predictions/train_predictions.tsv
+
+datafpath: ../cosc426/hw/hw03/data/data.tsv
+
+resultsfpath: ../cosc426/hw/hw03/results/train_results.tsv
+
+conditions: title
+
+save: by_pair, by_cond
