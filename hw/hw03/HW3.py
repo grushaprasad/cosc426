@@ -1,33 +1,7 @@
-from webbrowser import get
 import nltk
 from transformers import AutoTokenizer
-import math
-import pandas as pd
-
-def get_vocab(vocab_fname: str) -> set:
-    """
-    Args:
-        vocab_fname: filepath to vocab file. Each line has a new vocab item
-
-    Returns:
-        A set of all the vocabulary items in the file plus three additional tokens:
-            - [UNK] : to represent words in the text not in the vocab
-            - [BOS] : to represent the beginning of sentences.
-            - [EOS] : to represent the end of sentences.
-        If you run this function on the glove vocab, it should return set with 400003 items.
-
-    >>> len(getVocab('glove_vocab.txt'))
-    400003
-    """
-
-    with open(vocab_fname, "r") as f:
-        dat = f.read().split("\n")
-
-    dat = set([item.strip() for item in dat if len(item) > 0])
-    dat.add("[UNK]")
-    dat.add("[BOS]")
-    dat.add("[EOS]")
-    return dat
+import os
+import pickle
 
 
 def get_ngrams(text: list, n):
@@ -70,20 +44,21 @@ def preprocess(textfname: str, lower: bool, tokenizer, **kwargs):
 
     """
     tokens = []
-    print(f'Reading {textfname}')
-    with open(textfname, 'r') as f:
+    print(f"Reading {textfname}")
+    with open(textfname, "r") as f:
         text = f.readlines()
 
-    for i,line in enumerate(text):
+    for i, line in enumerate(text):
         if lower:
             line = line.lower()
         tokens.extend(tokenizer(line, kwargs))
-        if i%100 == 0:
-            print(f'Tokenized {i+1} lines')
+        if i % 100 == 0:
+            print(f"Tokenized {i+1} lines")
 
     return tokens
 
-def hf_tokenize(text:str, kwargs):
+
+def hf_tokenize(text: str, kwargs):
     """
     Params:
         text: string of text
@@ -113,14 +88,10 @@ def get_hf_vocab(modelname):
 
 
 def tests():
-    vocab = get_vocab("data/glove_vocab.txt")
     text = preprocess("data/test.txt", True, hf_tokenize, modelname="distilgpt2")
     print(text)
     bigram_freqs = get_ngramFreqs(text, 2)
     bigrams = get_ngrams(text, 2)
-
-    print(get_ngramProbs(text, 2, vocab, "add-1"))
-    print(get_ngramProbs(text, 1, vocab))
 
     for bigram in bigrams:
         if bigram_freqs[bigram] != 1:
@@ -129,7 +100,7 @@ def tests():
     print(len(get_hf_vocab("distilgpt2")))
 
 
-def get_ngramProbs(text: list, n: int, vocab: set, smooth: str = "MLE"):
+def train_ngram(text: list, n: int, vocab: set, smooth: str = "MLE"):
     """Get the probabilities of ngrams
 
     Returns:
@@ -166,15 +137,57 @@ def get_ngramProbs(text: list, n: int, vocab: set, smooth: str = "MLE"):
     return probs
 
 
-def evaluate(text: list, n: int, smooth: str, vocab: list):
+def evaluate(model: dict, eval_text: list, n: int):
+    """Evaluate the n-gram model on a given text file.
+
+    Args:
+        model (dict): The n-gram model to evaluate.
+        eval_text (list): The tokenized evaluation text.
+        n (int): The n in n-gram.
+
+    Returns:
+        float: the average probability of the n-grams in the evaluation text.
+    """
     total = 0
     count = 0
-    probs = get_ngramProbs(text, n, vocab, smooth)
-    for i in range(len(text) - n + 1):
-        total += probs[text[i : i + n]]
+    for i in range(len(eval_text) - n + 1):
+        total += model[eval_text[i : i + n]]
         count += 1
 
     return total / count
+
+
+def preprocess_and_cache(
+    textfname: str, lower: bool, tokenizer, cache_dir: str = "data/", **kwargs
+):
+    """
+    Params:
+        textfname: path to the text file
+        lower: whether to convert text to lowercase
+        tokenizer: tokenizing function
+        cache_dir: path to save/load the cache file
+        **kwargs: other kwargs for the tokenizer
+
+    Returns:
+        List of tokens in the text
+    """
+    cache_filename = f"{os.path.splitext(os.path.basename(textfname))[0]}_tokens.pkl"
+    cache_filepath = os.path.join(cache_dir, cache_filename)
+
+    try:
+        with open(cache_filepath, "rb") as f:
+            tokens = pickle.load(f)
+        print(f"Loading preprocessed tokens from cache: {cache_filepath}")
+    except (FileNotFoundError, EOFError):
+        print(f"Cache not found or invalid at {cache_filepath}. Running preprocess...")
+        tokens = preprocess(textfname, lower, tokenizer, **kwargs)
+
+        print(f"Saving preprocessed tokens to cache: {cache_filepath}")
+        with open(cache_filepath, "wb") as f:
+            pickle.dump(tokens, f)
+
+    print(f"Successfully processed {textfname}. Token count: {len(tokens)}\n")
+    return tokens
 
 
 if __name__ == "__main__":
