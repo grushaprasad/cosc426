@@ -24,6 +24,7 @@ class UnigramModel:
 
         self.traindat = self.preprocess(train_paths)
         self.unigram_freqs = self.train()
+        self.n = sum(self.unigram_freqs.values()) # greatly improves efficiency >1hour to <1min
 
     def preprocess(self, fpaths):
         """
@@ -78,23 +79,21 @@ class UnigramModel:
         k = 0  # k in add K
         v = len(self.vocab)  # num words
         w = 0  # num unigram
-        n = sum(len(row) for row in self.traindat)
         if self.smooth != "MLE" and not self.smooth.startswith("add-"):
-            print(
-                "You are in     if smooth is not 'MLE' or not smooth.startswith('add-'):"
-            )
             return -1
         if self.smooth.startswith("add-"):
             try:
                 k = float(self.smooth.lstrip("add-"))
             except:
                 return -1
-        if unigram in self.unigram_freqs:
-            w = self.unigram_freqs[unigram]
+
+        if unigram in self.vocab:  # if it is in the vocab, get its frequency
+            w = self.unigram_freqs.get(unigram, 0)
         else:
             w = self.unigram_freqs[self.unk_token]
+            # Note: It is imporant to distinguish between an unknown word ad a known word with 0 frequency
 
-        return (w + k) / (n + (v * k))
+        return (w + k) / (self.n + (v * k))
 
     def evaluate(self, datafpath, predfpath):
         """
