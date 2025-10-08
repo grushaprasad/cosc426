@@ -13,3 +13,7 @@
 * [MinimalPair](https://github.com/forrestdavis/NLPScholar/blob/main/src/docs/MinimalPair.md)
 * [TokenClassification](https://github.com/forrestdavis/NLPScholar/blob/main/src/docs/TokenClassification.md)
 * [TextClassification](https://github.com/forrestdavis/NLPScholar/blob/main/src/docs/TextClassification.md)
+
+## Other links
+
+* [Instructions for how to submit jobs on Turing](https://github.com/forrestdavis/NLPScholar/blob/main/Server.md)
