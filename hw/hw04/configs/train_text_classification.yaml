@@ -14,4 +14,8 @@ validfpath: ../cosc426/hw/hw04/data/textclassification_val.tsv
 
 modelfpath: ../cosc426/hw/hw04/models/textclassification
 
-loadPretrained: True
+loadPretrained: False
+
+id2label:
+  0: neg
+  1: pos
