@@ -1,0 +1,15 @@
+# Bayesian - positive
+exp: MinimalPair
+
+mode:
+  - evaluate
+
+models:
+  hf_causal_model:
+    - /Users/jeong/Projects/cosc426-projects/cosc426/hw/hw04/models/pos_bay
+
+predfpath: ../cosc426/hw/hw04/predictions/pos_predictions.tsv
+
+datafpath: ../cosc426/hw/hw04/data/pos_eval.tsv
+
+save: by_cond
