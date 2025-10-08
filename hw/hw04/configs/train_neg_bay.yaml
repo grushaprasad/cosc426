@@ -1,0 +1,17 @@
+# Bayesian - negative
+exp: MinimalPair
+
+mode:
+  - train
+
+models:
+  hf_causal_model:
+    - distilbert/distilgpt2
+
+trainfpath: ../cosc426/hw/hw04/data/neg_train.tsv
+
+validfpath: ../cosc426/hw/hw04/data/neg_val.tsv
+
+modelfpath: ../cosc426/hw/hw04/models/neg_bay
+
+loadPretrained: True

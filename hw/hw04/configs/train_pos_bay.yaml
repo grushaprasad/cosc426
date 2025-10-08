@@ -1,0 +1,17 @@
+# Bayesian - positive
+exp: MinimalPair
+
+mode:
+  - train
+
+models:
+  hf_causal_model:
+    - distilbert/distilgpt2
+
+trainfpath: ../cosc426/hw/hw04/data/pos_train.tsv
+
+validfpath: ../cosc426/hw/hw04/data/pos_val.tsv
+
+modelfpath: ../cosc426/hw/hw04/models/pos_bay
+
+loadPretrained: True
