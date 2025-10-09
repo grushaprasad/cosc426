@@ -17,3 +17,7 @@ modelfpath: ../cosc426/hw/hw04/models/textclassification
 loadPretrained: False
 
 numLabels: 2
+
+id2label:
+  0: neg
+  1: pos

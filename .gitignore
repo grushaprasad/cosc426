@@ -7,5 +7,6 @@
 **/submission/*
 **/models/*
 **/aclImdb/*
+**/archive/*
 
 !**/.gitkeep

@@ -1,0 +1,19 @@
+# Eval textclassification
+exp: TextClassification
+
+mode:
+  - evaluate
+
+models:
+  hf_text_classification_model:
+    - /Users/jeong/Projects/cosc426-projects/cosc426/hw/hw04/models/textclassification
+
+predfpath: ../cosc426/hw/hw04/predictions/textclassification_predictions.tsv
+
+datafpath: ../cosc426/hw/hw04/data/textclassification_eval.tsv
+
+save: by_cond
+
+id2label:
+  0: neg
+  1: pos
