@@ -10,6 +10,6 @@ models:
 
 predfpath: ../cosc426/hw/hw04/predictions/neg_predictions.tsv
 
-datafpath: ../cosc426/hw/hw04/data/neg_eval.tsv
+datafpath: ../cosc426/hw/hw04/data/bay_eval.tsv
 
 save: by_cond
