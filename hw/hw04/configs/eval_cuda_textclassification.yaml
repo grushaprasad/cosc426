@@ -3,6 +3,7 @@ exp: TextClassification
 
 mode:
   - evaluate
+  - analyze
 
 models:
   hf_text_classification_model:
@@ -11,6 +12,8 @@ models:
 predfpath: ../cosc426/hw/hw04/predictions/cuda_textclassification.tsv
 
 datafpath: ../cosc426/hw/hw04/data/textclassification_eval.tsv
+
+resultsfpath: ../cosc426/hw/hw04/results/cuda_textclassification.tsv
 
 save: by_cond, by_target
 
