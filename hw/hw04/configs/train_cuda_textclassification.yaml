@@ -1,0 +1,26 @@
+# Trains Textclassification
+# must add `max_length=512` param to src/trainers/HFTextClassificationTrainer.py:52
+exp: TextClassification
+
+mode:
+  - train
+
+models:
+  hf_text_classification_model:
+    - distilbert-base-uncased
+
+trainfpath: ../cosc426/hw/hw04/data/textclassification_train.tsv
+
+validfpath: ../cosc426/hw/hw04/data/textclassification_val.tsv
+
+modelfpath: ../cosc426/hw/hw04/models/textclassification
+
+loadPretrained: False
+
+numLabels: 2
+
+id2label:
+  0: neg
+  1: pos
+
+device: cuda
