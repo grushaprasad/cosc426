@@ -19,3 +19,7 @@
 - [Midterm groups](https://docs.google.com/spreadsheets/d/1doOiMv6qKcCuM_H4yqB2ObVTxMkUb8BCscOIxip6oGA/edit?usp=sharing) (**Only for students; need to be signed into Colgate email**)
 - [Midterm plan template](https://docs.google.com/document/d/1aSMGmTqvn9Pm3aUqr5qnELa7mPe6mVXY43yPIP0xYAU/edit?usp=sharing)
 - [Overleaf paper template](https://www.overleaf.com/read/ywvnsjqxsjqh#f4d47b)
+
+## Other links
+
+- [Script to convert BERTs of a feather tensorflow models to pytorch](util/bert_mnli_tf_to_torch.py)
