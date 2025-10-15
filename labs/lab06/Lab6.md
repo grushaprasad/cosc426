@@ -65,7 +65,7 @@ In this part you should:
 
 3. Use `compute_analogy` and your analogies to test how robustly gender is encoded in `GLoVe` and `distilgpt` embeddings. 
 
-## Part 4: Using analogies to study encoding of other features
+## Part 4 (Optional): Using analogies to study encoding of other features
 
 For this part, do the following: 
 
