@@ -6,15 +6,19 @@ You will work on the project in five phases. You can read about the pedagogical 
 
 ## Phase one: Thinking through an idea (on your own)
 
-First, you will work-through (at some level of detail) a project idea on your own. This should be something you are interested in, regardless of who you might work with in the end. You will submit an individual project idea building on a google doc template. Add a shortcut to your doc in the shared folder (you need to be logged in to your Colgate email) linked below. Additionally, post a pdf to Gradescope.
+First, you will work-through (at some level of detail) a project idea on your own. This should be something you are interested in, regardless of who you might work with in the end. You will submit an individual project idea building on a google doc template. Add a shortcut to your doc in the shared folder (you need to be logged in to your Colgate email) linked below. Make sure to add your name to the file!
 
-* [Individual Project Template](https://docs.google.com/document/d/18NEOXHuBX5_RSSabhmeQD0wKT9VrspAMDJLab1Qi-8A/edit?usp=sharing)
-* [Drive folder](https://drive.google.com/drive/folders/1H_P7U-yJWlZgAHMJT8qDcDtMDRTTviRG?usp=drive_link)
+* [Individual Project Template](https://docs.google.com/document/d/16jGExYntDYBcgu74n1j-_4ujuYFr3XO1-y4AS8aXwmU/edit?usp=drive_link)
+* [Drive folder](https://drive.google.com/drive/folders/1p5AcgjCE0tW6U1ZDN9drd0lNvblybIJG?usp=drive_link)(**Only for students; need to be signed into Colgate email**)
 
 ## Phase two: Pilot proposal + feedback (in a group)
 
-* [Final project groups](https://docs.google.com/spreadsheets/d/1RGXBPNgqQVsYPk6myhhS4TK-eHgX8s2u5a6auBXQeeo/edit?usp=sharing) (Only for F24 COSC 426B; you need to be signed in with your Colgate email)
-* [Final project proposal template](https://docs.google.com/document/d/1WhDwPMXrs0_b4svbO9RI5E4jZLQHGsJNZPMMfXL79fk/edit?usp=sharing)
+Work with your group to come up with a project proposal. Submit this to gradescope.
+
+* [Project groups](https://docs.google.com/spreadsheets/d/1doOiMv6qKcCuM_H4yqB2ObVTxMkUb8BCscOIxip6oGA/edit?usp=sharing) (**Only for students; need to be signed into Colgate email**)
+* [Pilot proposal template] (https://docs.google.com/document/d/1WhDwPMXrs0_b4svbO9RI5E4jZLQHGsJNZPMMfXL79fk/edit?usp=drive_link)
+ 
+
 
 ## Phase three: Pilot results presentation (in a group)
 
@@ -28,14 +32,14 @@ Each group will present your pilot results for 5 minutes. Your presentation shou
 
 After each presentation, there will be 2 minutes of questions/feedback from your peers. 
 
-Add your slides to [this folder](https://drive.google.com/drive/folders/1AzeLpIMKYLvo7jvpUqdwRp_4UtXFW0xp?usp=drive_link) (Only for F24 COSC 426B; you need to be signed in with your Colgate email)
+Add your slides to [this folder](https://drive.google.com/drive/folders/1fzYEaAW1DEpnVvRJDfgP58YZ7tP6o1Eo?usp=drive_link) (**Only for students; need to be signed into Colgate email**)
 
 
 ## Phase four: Poster presentation (in a group)
 
 * [Poster template](https://docs.google.com/presentation/d/1GGJMG_BTGtAOZLpRNaWq_JYd7sqgx72Vi5sCLR2ZhaA/edit?usp=sharing)
-* [Poster presentation schedule](https://docs.google.com/spreadsheets/d/1S4PDAeQrDvTJs3lwh8T2F8QoMLIkUl2uWGLoexLiWIE/edit?usp=sharing) (Only for F24 COSC 426B; you need to be signed in with your Colgate email)
-* [Poster presentation rubric](https://docs.google.com/document/d/1FT_WVUHGX2FyaP49hB2R6xkZXdCiewCWWNjmjZRTvUE/edit?usp=sharing)
+* [Poster presentation schedule](https://docs.google.com/spreadsheets/d/1doOiMv6qKcCuM_H4yqB2ObVTxMkUb8BCscOIxip6oGA/edit?usp=sharing) (**Only for students; need to be signed into Colgate email**)
+* [Poster presentation rubric](https://docs.google.com/document/d/19UMwU3Bg9PpLJYLWgVoRUhRSxutEABeeF1FTNiDX8so/edit?usp=sharing)
 
 ## Phase five: Writing the final paper (on your own)
 
