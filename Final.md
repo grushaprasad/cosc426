@@ -10,6 +10,7 @@ First, you will work-through (at some level of detail) a project idea on your ow
 
 * [Individual Project Template](https://docs.google.com/document/d/16jGExYntDYBcgu74n1j-_4ujuYFr3XO1-y4AS8aXwmU/edit?usp=drive_link)
 * [Drive folder](https://drive.google.com/drive/folders/1p5AcgjCE0tW6U1ZDN9drd0lNvblybIJG?usp=drive_link)(**Only for students; need to be signed into Colgate email**)
+* [Team mate preference form](https://docs.google.com/forms/d/e/1FAIpQLSeYQVGorbRYiuhyKTf4vCeBilBWkHrK2SVUbVpSLrEmirnhPQ/viewform?usp=publish-editor)(**Only for students; need to be signed into Colgate email**)
 
 ## Phase two: Pilot proposal + feedback (in a group)
 
