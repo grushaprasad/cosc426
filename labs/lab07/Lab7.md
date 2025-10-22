@@ -149,5 +149,9 @@ For this part do the following:
 3. Systematically vary the factor that you picked, and evaluate whether this factor changes the goodness of the learned representations for either the alice or sherlock text, and discuss your results. 
 
 
+Note: Training the model on the `glove_10k` vocab on the full texts can take time. So here are some alternatives to speed up training: 
 
+1. Create a python script to submit jobs on Turing (e.g., one job per parameter setting). You will also be able to use GPUs. 
+
+2. Define a smaller vocabulary size and justify why you picked this smaller set. 
 
