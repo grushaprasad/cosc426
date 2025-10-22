@@ -13,7 +13,6 @@ class CBOW_Dataset(torch.utils.data.Dataset):
 
         tokens_list = [['BOS'] + nltk.tokenize.word_tokenize(seq) + ['EOS'] for seq in self.text.split('\n')]
 
-        # tokens_list = [['BOS'] + seq.split(' ') + ['EOS'] for seq in self.text.split('\n')]
 
         self.tokenized = [[token.strip() for token in seq] for seq in tokens_list]
 
@@ -42,7 +41,6 @@ class CBOW_Dataset(torch.utils.data.Dataset):
                 right_pad = [self.word_to_id['[PAD]']]*((i+self.window_size + 1)-len(seq))
 
 
-            # for i in range(self.window_size, len(seq) - self.window_size):
 
                 left = left_pad + seq[start : i]
                 right = seq[i + 1 : end] + right_pad
@@ -51,7 +49,6 @@ class CBOW_Dataset(torch.utils.data.Dataset):
 
                 target = seq[i]
 
-                # print(context)
 
                 X.append(torch.tensor(context))
                 y.append(torch.tensor(target))
@@ -105,20 +102,17 @@ class CBOW_Model(torch.nn.Module):
 
         self.out = torch.nn.Linear(nEmbed, vocabSize)
 
-        # self.activation = torch.nn.relu()
-
 
 
     def forward(self, inp):
         embedded_inp = self.embed(inp)
-        summed_inp = embedded_inp.mean(dim=1) ## change this to sum or call it avg_input
-        logits = self.out(summed_inp)
-        probs = torch.nn.functional.softmax(logits)
+        avg_inp = embedded_inp.mean(dim=1)
+        logits = self.out(avg_inp)
 
-        return probs
+        return logits
 
     def loss(self, y_pred, y_target):
-        loss_fn = torch.nn.NLLLoss() ## same as cross entropy ## Verify if i can use NLL for multi class... 
+        loss_fn = torch.nn.CrossEntropyLoss() ## takes logits not probs
         return loss_fn(y_pred, y_target)
 
 
@@ -153,14 +147,11 @@ class CBOW_Trainer():
                 X,y_target = X.to(self.device), y_target.to(self.device)
                 y_pred = model(X)
 
-                # y_pred_reshaped = y_pred.reshape(-1, model.vocabSize)
                 loss = model.loss(y_pred, y_target)
 
 
-                # loss = model.loss(y_pred_reshaped, y.flatten().long())
                 optimizer.zero_grad()
                 loss.backward()
-                # torch.nn.utils.clip_grad_norm_(model.parameters(), 0.25)
                 optimizer.step()
                 epoch_loss += loss.item()
 
@@ -169,7 +160,7 @@ class CBOW_Trainer():
                 val_loss = round(evaluator.compute_loss(model), 5)
 
                 print(f"Epoch {epoch}:\t Avg Train Loss: {round(epoch_loss/num_batches,5)}\t Avg Val Loss: {val_loss}")
-                
+
 
         print('Training done!')
         print(f"Avg Train Loss: {round(epoch_loss/num_batches,5)}")
