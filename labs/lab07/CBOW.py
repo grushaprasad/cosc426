@@ -11,7 +11,7 @@ class CBOW_Dataset(torch.utils.data.Dataset):
             words = [word.strip() for word in f.readlines()] + ['[BOS]', '[EOS]']
             self.vocab = set(words)
 
-        tokens_list = [['BOS'] + nltk.tokenize.word_tokenize(seq) + ['EOS'] for seq in self.text.split('\n')]
+        tokens_list = [['[BOS]'] + nltk.tokenize.word_tokenize(seq) + ['[EOS]'] for seq in self.text.split('\n')]
 
 
         self.tokenized = [[token.strip() for token in seq] for seq in tokens_list]
